@@ -29,16 +29,12 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(fifa) {
-    const finalStages = fifa.filter(function(item){
-       return item.Stage === 'Final'
-   })
-   return finalStages
-}
+const getFinals =fifa=> fifa.filter((item) => item.Stage === 'Final')
 
 
 
-   console.log(getFinals(fifaData),'Task 2')
+console.log(getFinals(fifaData),'Task 2')
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function called getYears to do the following: 
@@ -46,11 +42,20 @@ Use the higher-order function called getYears to do the following:
 2. Receive a callback function getFinals from task 2 
 3. Return an array called years containing all of the years in the getFinals data set*/
 
-function getYears(arrayData) {
-        const finalYears = arrayData.filter(function(item){
-            return 
-        })
-    }
+// function getYears2(arr, callback) {
+//         let yearsArr = []
+//         for (let element of callback(arr)){
+//             yearsArr.push (element.Year)
+//         }
+//         return yearsArr
+//     }
+
+
+
+
+const getYears =(arr, callback)=> callback(arr).map((el,i) => el.Year);
+
+ console.log('Task 3', getYears(fifaData,getFinals))
 
 
 
@@ -61,8 +66,9 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
+function getWinners(arr, finals) {
+    let winners = []
+    finals()
 }
 
 
