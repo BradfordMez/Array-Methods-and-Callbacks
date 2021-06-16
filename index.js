@@ -62,14 +62,21 @@ const getYears =(arr, callback)=> callback(arr).map((el,i) => el.Year);
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function getWinners to do the following:  
 1. Receives an array
-2. Receives the callback function getFinals from task 2 
+// 2. Receives the callback function getFinals/* from task 2 
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(arr, finals) {
+function getWinners(arr, callback) { 
     let winners = []
-    finals()
-}
+    for(let i=0; i<callback.length; i++){
+        return winners.push(`${callback[i]['Win conditions']}`)
+    }   
+ }       
+     
+// item = win conditions
+
+
+console.log('task 4', getWinners(fifaData, getFinals, 'Win conditions'))
 
 
 
