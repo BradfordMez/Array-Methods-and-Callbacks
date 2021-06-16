@@ -86,10 +86,13 @@ hint: the strings returned need to exactly match the string in step 4.
 
 function getWinnersByYear(arr, callbackYears, callbackWinners) {
     const stringArr = []
-    arr.map(function(item){
-    return `In ${arr.callbackYears}, ${arr.callbackWinners} won the world cup!`})
+    arr.forEach(function(item){
+    return stringArr.push(`In ${arr.callbackYears}, ${arr.callbackWinners} won the world cup!`)})
 }
-console.log('task 5', getWinnersByYear(fifaData,getYears,getWinners))
+
+
+
+console.log('task 5', getWinnersByYear(fifaData,getWinners,getYears))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
