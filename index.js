@@ -84,12 +84,11 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(arr, callbackYears, callbackWinners) {
-    const stringArr = []
-    arr.forEach(function(item){
-    return stringArr.push(`In ${arr.callbackYears}, ${arr.callbackWinners} won the world cup!`)})
+function getWinnersByYear(arr, callbackYears, callbackWinners){
+    const years = callbackYears(arr, getFinals);
+    const winners = callbackWinners(arr, getFinals);
+    return years.map((i, index) => `In ${i}, ${winners[index]} won the world cup!`); 
 }
-
 
 
 console.log('task 5', getWinnersByYear(fifaData,getWinners,getYears))
